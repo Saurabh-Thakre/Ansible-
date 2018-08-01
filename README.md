@@ -1,2 +1,2 @@
 # Ansible-
-Few starters examples of ansible playbooks 
+Few starters examples of ansible playbooks. 
