@@ -1,5 +1,9 @@
-- name: install nginx
-  yum: name=nginx state=present enablerepo=nginx
+---
+- hosts : <target-host>
+  tasks :
+   - name : Installing Nginx
+     dnf : name=nginx state=present
 
-- name: Start Nginx
-  service: name=nginx enabled=yes state=started
+   - name: Starting The Service
+     service: name=nginx enabled=yes state=started
+... 
