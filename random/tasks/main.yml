@@ -1,0 +1,16 @@
+---
+# tasks file for yamls
+- name: Creating user {{ u }}
+  user:
+    name: "{{ u }}"
+    state: present
+
+- name: Installing Nginx,tree
+  yum:
+          name: "{{ item }}"
+          state: latest
+  with_items:
+        - nginx
+        - tree
+  notify:
+        - restart service
