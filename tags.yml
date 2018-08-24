@@ -1,0 +1,34 @@
+#If you have a large playbook it may become useful to be able to run a specific part of the configuration without running the whole playbook.
+# run this playbook by >>>>>> ansible-playbook tag.yml --tags <tagsname>
+#On the other hand, if you want to run a playbook without certain tasks, you could do this: 
+#>>>>>>>>> ansible-playbook example.yml --skip-tags "adduser"
+---
+- hosts: servera
+  tasks:
+    - name: Installing tree
+      dnf:
+        name: tree
+        state: latest
+      tags: tree
+
+    - name: Adding user
+      user:
+         name: tags
+         state: present
+      tags: adduser
+
+    - name: Installing nginx,git
+      dnf:
+        name: "{{ item }}"
+      loop:
+        - nginx
+        - git
+      tags: multipkg
+      notify:
+          - restart
+
+  handlers:
+    - name: restart
+      service:
+        name: nginx
+        state: restarted
