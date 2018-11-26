@@ -4,12 +4,12 @@
   connection: local 
   vars:
     region: ap-southeast-2
-    name: redhat
+    id: i-034b2b5434a23423s
   tasks:
     - name: start the instance
       ec2:
         region: "{{ region }}"
-        instance_ids: "i-01b2556bcc6bb849e"
+        instance_ids: "{{ id }}"
         state: running
         wait: yes
 
