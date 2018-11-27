@@ -3,8 +3,8 @@
   gather_facts: yes
   connection: local 
   vars:
-    region: ap-southeast-2
-    id: i-034b2b5434a23423s
+    region: ap-south-1a
+    id: i-034b2b5434a342d7a
   tasks:
     - name: start the instance
       ec2:
