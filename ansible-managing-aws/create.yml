@@ -29,7 +29,7 @@
   - name: "Provisioning the EC2 instance"
     ec2:
       key_name: "{{ sshkey }}"
-      group_id: "ansible-standalone"
+      group_id: "sg-242e5a4f"
       instance_type: "{{ type }}"
       ec2_region: "{{ region }}"
       image: "{{ ami }}"
