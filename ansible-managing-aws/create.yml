@@ -6,7 +6,7 @@
     ami: "ami-5b673c34"
     region: "ap-south-1"
     type: "t2.micro"
-    sshkey: "newkey"
+    sshkey: "3.1conf"
     vpcid: "vpc-ce16f7a7"
 
   tasks:
