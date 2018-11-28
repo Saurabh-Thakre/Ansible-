@@ -10,22 +10,6 @@
     vpcid: "vpc-ce16f7a7"
 
   tasks:
-  - name: "Creating a new security group"
-    ec2_group:
-      name: "saurabh-ansible-security-group"
-      description: "Group for ansible"
-      region: "{{ region }}"
-      vpc_id: "{{ vpcid }}"
-      rules:
-        - proto: "tcp"
-          from_port: 22
-          to_port: 22
-          cidr_ip: "0.0.0.0/0"
-      rules_egress:
-        - proto: "all"
-          cidr_ip: "0.0.0.0/0"
-    register: secgrp
-
   - name: "Provisioning the EC2 instance"
     ec2:
       key_name: "{{ sshkey }}"
