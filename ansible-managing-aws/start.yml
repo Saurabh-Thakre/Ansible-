@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   gather_facts: yes
-  connection: local 
+  connection: local
+  become: False
   vars:
     region: ap-south-1a
     id: i-034b2b5434a342d7a
