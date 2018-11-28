@@ -3,10 +3,10 @@
   connection: local
   gather_facts: false
   vars:
-    ami: "ami-67589505"
-    region: "{{ region }}"
+    ami: "ami-5b673c34"
+    region: "ap-south-1"
     type: "t2.micro"
-    sshkey: "ap-southeast"
+    sshkey: "newkey"
     vpcid: "vpc-ce16f7a7"
 
   tasks:
@@ -29,7 +29,7 @@
   - name: "Provisioning the EC2 instance"
     ec2:
       key_name: "{{ sshkey }}"
-      group_id: "{{ secgrp.group_id }}"
+      group_id: "ansible-standalone"
       instance_type: "{{ type }}"
       ec2_region: "{{ region }}"
       image: "{{ ami }}"
