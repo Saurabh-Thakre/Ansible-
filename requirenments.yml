@@ -1,3 +1,3 @@
-- name: nginx_role
+- name: random
   src: https://github.com/Saurabh-Thakre/AnotherAnsibleRepo/tree/random/random
   version: origin/random
