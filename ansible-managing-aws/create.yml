@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    ami: "ami-5b673c34"
+    region: "ap-south-1"
+    type: "t2.micro"
+    sshkey: "3.1conf"
+    vpcid: "vpc-ce16f7a7"
+
+  tasks:
+  - name: "Provisioning the EC2 instance"
+    ec2:
+      key_name: "{{ sshkey }}"
+      group_id: "sg-242e5a4f"
+      instance_type: "{{ type }}"
+      ec2_region: "{{ region }}"
+      image: "{{ ami }}"
+      wait: true
+      count: 1
+      instance_tags:
+        tool: "ansible"
+        env: "testing"
+    register: ec2instance

@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local 
+  vars:
+    region: ap-southeast-2
+    name: redhat
+  tasks:
+    - name: stop the instance
+      ec2:
+        region: "{{ region }}"
+        instance_ids: "i-01b2556bcc6bb849e"
+        state: stopped
+        wait: yes
+

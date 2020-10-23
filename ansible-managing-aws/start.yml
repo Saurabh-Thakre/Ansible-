@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  connection: local
+  become: False
+  vars:
+    region: ap-south-1a
+    id: i-034b2b5434a342d7a
+  tasks:
+    - name: start the instance
+      ec2:
+        region: "{{ region }}"
+        instance_ids: "{{ id }}"
+        state: running
+        wait: yes
+

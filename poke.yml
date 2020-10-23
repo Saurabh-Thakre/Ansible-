@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: testing venv 
+      debug:
+        var: "ansible_playbook_python"

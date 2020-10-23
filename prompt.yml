@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  vars_prompt:
+        - name: username
+          prompt: "What is your name"
+          private: no
+        - name: s
+          prompt: "Let me add it to my userlis,to do so press ENTER"
+  tasks:
+          - name: Ready to go and login with {{username}}
+            user:
+                    name: "{{username}}"
+                    state: present

@@ -1,0 +1,7 @@
+---
+# handlers file for yamls
+- name: restart service
+  service:
+          name: nginx
+          state: restarted
+          enabled: true

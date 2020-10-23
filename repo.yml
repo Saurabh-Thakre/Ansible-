@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: root
+  gather_facts: no
+  tasks:
+    - name: repo
+      yum_repository:
+         name: repocfme
+         description: repo
+         file: external_repos
+         baseurl: http://10.65.231.2/vault/jaison/repo/rhel-7-server-rpms
+         gpgcheck: no 
+         enabled: yes
